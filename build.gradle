@@ -17,6 +17,9 @@ configurations {
 repositories {
 	mavenCentral()
 }
+bootJar {
+	mainClass = 'com.sms.amazonproduct.AmazonProductApplication'
+}
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
