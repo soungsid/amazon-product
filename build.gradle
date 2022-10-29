@@ -23,6 +23,16 @@ repositories {
 bootJar {
 	mainClass = 'com.sms.amazonproduct.AmazonProductApplication'
 }
+jar {
+	manifest {
+		attributes(
+				'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+				'Main-Class': 'com.sms.amazonproduct.AmazonProductApplication'
+		)
+	}
+}
+
+
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
