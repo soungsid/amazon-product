@@ -10,6 +10,6 @@ RUN ./gradlew build
 
 FROM openjdk:17-alpine
 WORKDIR /usr/app
-COPY --from=TEMP_BUILD_IMAGE /usr/app/build/libs/*-aot.jar app.jar
+COPY --from=TEMP_BUILD_IMAGE /usr/app/build/libs/amazon-product-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 CMD ["java","-jar", "app.jar"]
